@@ -29,40 +29,46 @@ const images = [
 
 ];
 
+
 let isProgramStopped = false;
 
-        function showRandomImage() {
-            if (isProgramStopped) {
-                showFinalResult();
-                return;
-            }
-            if (images.length === 0) {
-                alert('Please add images to the collection!');
-                return;
-            }
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const imageElement = document.getElementById('randomImage');
-            imageElement.src = images[randomIndex];
-            imageElement.classList.add('show');
-            
-            imageElement.onload = () => {
-                isProgramStopped = true;
-                showFinalResult();
-            };
-        }
+function showRandomImage() {
+    const userName = document.getElementById('userName').value.trim();
+    if (!userName) {
+        alert('Please enter your name before showing an image!');
+        return;
+    }
+    if (isProgramStopped) {
+        showFinalResult();
+        return;
+    }
+    if (images.length === 0) {
+        alert('Please add images to the collection!');
+        return;
+    }
+    const randomIndex = Math.floor(Math.random() * images.length);
+    const imageElement = document.getElementById('randomImage');
+    imageElement.src = images[randomIndex];
+    imageElement.classList.add('show');
+    // Call showFinalResult after image is loaded
+    imageElement.onload = () => {
+        isProgramStopped = true;
+        showFinalResult();
+    };
+}
 
-        function showFinalResult() {
-            document.querySelectorAll('button:not([onclick="resetProgram()"])').forEach(button => button.disabled = true);
-            alert('This is the final image. The program has stopped. Click Reset to start again.');
-        }
+function showFinalResult() {
+    document.querySelectorAll('button:not([onclick="resetProgram()"])').forEach(button => button.disabled = true);
+    const userName = document.getElementById('userName').value.trim();
+    alert(`${userName ? userName + ', t' : 'T'}his is the final image. The program has stopped. Click Reset to start again.`);
+}
 
-        function resetProgram() {
-            isProgramStopped = false;
-            document.querySelectorAll('button').forEach(button => button.disabled = false);
-            const imageElement = document.getElementById('randomImage');
-            imageElement.src = '';
-            imageElement.classList.remove('show');
-            alert('Program has been reset. You can now show a new random image.');
-        }
-
-
+function resetProgram() {
+    isProgramStopped = false;
+    document.querySelectorAll('button').forEach(button => button.disabled = false);
+    const imageElement = document.getElementById('randomImage');
+    imageElement.src = '';
+    imageElement.classList.remove('show');
+    document.getElementById('userName').value = '';
+    alert('Program has been reset. Please enter your name to show a new random image.');
+}

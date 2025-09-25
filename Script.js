@@ -29,23 +29,40 @@ const images = [
 
 ];
 
-function showRandomImage() {
-    if (images.length === 0) {
-        alert('Please add images to the collection!');
-        return;
-    }
-    const randomIndex = Math.floor(Math.random() * images.length);
-    const imageElement = document.getElementById('randomImage');
-    imageElement.src = images[randomIndex];
-    imageElement.classList.add('show');
+let isProgramStopped = false;
 
-    imageElement.onload = showFinalResult;
-}
+        function showRandomImage() {
+            if (isProgramStopped) {
+                showFinalResult();
+                return;
+            }
+            if (images.length === 0) {
+                alert('Please add images to the collection!');
+                return;
+            }
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const imageElement = document.getElementById('randomImage');
+            imageElement.src = images[randomIndex];
+            imageElement.classList.add('show');
+            
+            imageElement.onload = () => {
+                isProgramStopped = true;
+                showFinalResult();
+            };
+        }
 
-function showFinalResult() {
-    
-    document.querySelectorAll('button').forEach(button => button.disabled = true);
-    alert('This is the final image. The program has stopped.');
-}
+        function showFinalResult() {
+            document.querySelectorAll('button:not([onclick="resetProgram()"])').forEach(button => button.disabled = true);
+            alert('This is the final image. The program has stopped. Click Reset to start again.');
+        }
+
+        function resetProgram() {
+            isProgramStopped = false;
+            document.querySelectorAll('button').forEach(button => button.disabled = false);
+            const imageElement = document.getElementById('randomImage');
+            imageElement.src = '';
+            imageElement.classList.remove('show');
+            alert('Program has been reset. You can now show a new random image.');
+        }
 
 

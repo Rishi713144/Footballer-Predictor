@@ -39,5 +39,9 @@ function showRandomImage() {
     imageElement.src = images[randomIndex];
     imageElement.classList.add('show');
 
+    document.querySelectorAll('button').forEach(button => button.disabled = true);
+    alert('This is the final image. The program has stopped.');
+
 }
+
 

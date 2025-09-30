@@ -26,7 +26,7 @@ Footballer Predictor  is a simple web application that allows users to view a ra
 
 
 
-**Dependencies:** None. The application uses no external libraries and relies on images hosted online.### Usage
+**Dependencies:** None. The application uses no external libraries and relies on images hosted online.
 
 # Usage
 
@@ -61,4 +61,9 @@ If the image collection is empty, an alert will notify you.
 
 
 **Reset:** Click the "Reset" button to clear the image, name input, and program state. An alert confirms the reset, and you can enter a new name to start again.
+
+
+## License
+
+[MIT License](License)
 

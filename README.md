@@ -65,5 +65,5 @@ If the image collection is empty, an alert will notify you.
 
 ## License
 
-[MIT License](License)
+[MIT License](LICENSE)
 

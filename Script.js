@@ -190,12 +190,7 @@ function showRandomImage() {
     }, 500);
   };
 
-  imageElement.onerror = () => {
-    clearInterval(progressInterval);
-    progressContainer.classList.remove("show");
-    alert("Failed to load image. Please try again.");
-    isProgramStopped = false;
-  };
+  
 }
 
 function showFinalResult() {
@@ -241,4 +236,5 @@ function toggleTheme() {
 
 
 document.documentElement.setAttribute("data-theme", "dark");
+
 

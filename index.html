@@ -13,7 +13,9 @@
   </head>
 
   <body>
-    <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      🌓 Toggle Theme
+    </button>
 
     <h1>Which footballer are you?</h1>
 
@@ -25,6 +27,12 @@
     <button onclick="resetProgram()">Reset</button>
 
     <br />
+
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-text" id="progressText">Loading...</span>
+    </div>
+
     <img id="randomImage" src="" alt="Random Image" />
     <div class="player-name" id="playerName"></div>
   </body>

@@ -142,15 +142,49 @@ function showRandomImage() {
 
   const imageElement = document.getElementById("randomImage");
   const playerNameElement = document.getElementById("playerName");
+  const progressContainer = document.getElementById("progressContainer");
+  const progressBar = document.getElementById("progressBar");
+  const progressText = document.getElementById("progressText");
+
+  // Hide image and player name, show progress bar
+  imageElement.classList.remove("show");
+  playerNameElement.classList.remove("show");
+  progressContainer.classList.add("show");
+  progressBar.style.width = "0%";
+  progressText.textContent = "Loading...";
+
+  // Simulate progress
+  let progress = 0;
+  const progressInterval = setInterval(() => {
+    progress += Math.random() * 15;
+    if (progress > 90) progress = 90;
+    progressBar.style.width = progress + "%";
+    progressText.textContent = Math.floor(progress) + "%";
+  }, 100);
 
   imageElement.src = currentFootballer.image;
-  imageElement.classList.add("show");
 
   imageElement.onload = () => {
-    playerNameElement.textContent = currentFootballer.name;
-    playerNameElement.classList.add("show");
-    isProgramStopped = true;
-    showFinalResult();
+    // Complete the progress bar
+    clearInterval(progressInterval);
+    progressBar.style.width = "100%";
+    progressText.textContent = "100%";
+
+    setTimeout(() => {
+      progressContainer.classList.remove("show");
+      imageElement.classList.add("show");
+      playerNameElement.textContent = currentFootballer.name;
+      playerNameElement.classList.add("show");
+      isProgramStopped = true;
+      showFinalResult();
+    }, 500);
+  };
+
+  imageElement.onerror = () => {
+    clearInterval(progressInterval);
+    progressContainer.classList.remove("show");
+    alert("Failed to load image. Please try again.");
+    isProgramStopped = false;
   };
 }
 
@@ -175,11 +209,13 @@ function resetProgram() {
 
   const imageElement = document.getElementById("randomImage");
   const playerNameElement = document.getElementById("playerName");
+  const progressContainer = document.getElementById("progressContainer");
 
   imageElement.src = "";
   imageElement.classList.remove("show");
   playerNameElement.textContent = "";
   playerNameElement.classList.remove("show");
+  progressContainer.classList.remove("show");
   document.getElementById("userName").value = "";
 
   alert(

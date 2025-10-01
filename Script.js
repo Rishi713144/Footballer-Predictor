@@ -123,6 +123,16 @@ let isProgramStopped = false;
 let currentFootballer = null;
 
 function showRandomImage() {
+
+  const randomButton = document.getElementById("randomButton");
+  randomButton.classList.add("clicked");
+
+  
+  setTimeout(() => {
+    randomButton.classList.remove("clicked");
+  }, 300);
+ 
+
   const userName = document.getElementById("userName").value.trim();
   if (!userName) {
     alert("Please enter your name before showing an image!");
@@ -193,5 +203,5 @@ function toggleTheme() {
   document.documentElement.setAttribute("data-theme", newTheme);
 }
 
-// Set initial theme to dark
+
 document.documentElement.setAttribute("data-theme", "dark");

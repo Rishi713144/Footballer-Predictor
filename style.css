@@ -1,193 +1,31 @@
+/* --- THEME VARIABLES --- */
+/* Default theme is Dark */
 :root {
-
-    --primary-bg: #4e15d5;
-    --secondary-bg: #116f16;
-    --text-color: white;
-    --heading-color: rgb(99, 200, 206);
-    --button-bg: #4CAF50;
-    --button-hover: #116f16;
-    --input-border: #8707ff;
-    --shadow-color: rgba(0, 0, 0, 0.2);
-    --caption-bg: rgba(0, 0, 0, 0.8);
+  --bg-color: #1a1a1a;
+  --text-primary: #e0e0e0;
+  --text-secondary: #b0b0b0;
+  --heading-color: #64c8ce;
+  --button-bg: #2d5a2d;
+  --button-hover: #1e3a1e;
+  --input-border: #555;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+  --caption-bg: rgba(0, 0, 0, 0.9);
 }
 
-.dark-theme {
-    --primary-bg: #1a1a1a;
-    --secondary-bg: #333333;
-    --text-color: #e0e0e0;
-    --heading-color: #64c8ce;
-    --button-bg: #2d5a2d;
-    --button-hover: #1e3a1e;
-    --input-border: #555;
-    --shadow-color: rgba(255, 255, 255, 0.1);
-    --caption-bg: rgba(0, 0, 0, 0.9);
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--primary-bg);
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: relative;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#themeToggle {
-    background: none;
-    border: 2px solid var(--text-color);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#themeToggle:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px var(--shadow-color);
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: var(--button-bg);
-    color: var(--text-color);
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background-color: var(--button-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px var(--shadow-color);
-}
-
-button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    transform: none;
-}
-
-/* Image Container */
-.image-container {
-    position: relative;
-    margin: 20px 0;
-}
-
-img {
-    max-width: 500px;
-    max-height: 500px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    display: none;
-    transition: all 0.3s ease;
-}
-
-img.show {
-    display: block;
-    animation: fadeInUp 0.8s ease-out;
-}
-
-/* Player Caption Styling */
-.player-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--caption-bg);
-    color: var(--text-color);
-    padding: 15px;
-    text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 0 0 10px 10px;
-    display: none;
-    backdrop-filter: blur(5px);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-}
-
-.player-caption.show {
-    display: block;
-    animation: slideInUp 0.8s ease-out 0.3s both;
-}
-
-h1 {
-    color: var(--heading-color);
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px #000000;
-    font-size: 36px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    animation: backInLeft 1s ease-out;
-    transition: color 0.3s ease;
-}
-
-p {
-    color: var(--text-color);
-    font-size: 18px;
-    text-align: center;
-    max-width: 600px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px #000000;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    letter-spacing: 1px;
-    animation: fadeIn 2s ease-in;
-    transition: color 0.3s ease;
-}
-
-input {
-    color: var(--text-color);
-    border: 2px solid var(--input-border);
-    border-radius: 10px;
-    padding: 10px 25px;
-    background: transparent;
-    max-width: 190px;
-    animation: fadeIn 2s ease-in;
-    transition: all 0.3s ease;
-    font-size: 16px;
-
-  --bg-color: #4e15d5;
-  --text-color: rgb(99, 200, 206);
-  --button-bg: #4caf50;
-  --button-hover: #116f16;
-  --input-border: #8707ff;
-  --text-secondary: white;
-  --shadow-color: rgba(0, 0, 0, 0.2);
-}
-
+/* Light Theme */
 [data-theme="light"] {
   --bg-color: #f0f0f0;
-  --text-color: #2c3e50;
+  --text-primary: #2c3e50;
+  --text-secondary: #34495e;
+  --heading-color: #2c3e50;
   --button-bg: #3498db;
   --button-hover: #2980b9;
   --input-border: #3498db;
-  --text-secondary: #34495e;
   --shadow-color: rgba(0, 0, 0, 0.1);
+  --caption-bg: rgba(255, 255, 255, 0.8);
 }
 
+/* --- GENERAL STYLES --- */
 body {
   display: flex;
   flex-direction: column;
@@ -196,29 +34,34 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--bg-color);
-  transition: background-color 0.3s ease;
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+  text-align: center;
 }
 
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: var(--button-bg);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+h1 {
+  color: var(--heading-color);
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease-out;
 }
 
-.theme-toggle:hover {
-  background-color: var(--button-hover);
+p {
+  color: var(--text-secondary);
+  font-size: 18px;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
+/* --- COMPONENT STYLES --- */
 button {
   padding: 10px 20px;
   font-size: 16px;
@@ -228,66 +71,43 @@ button {
   border: none;
   border-radius: 5px;
   margin: 10px;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover {
   background-color: var(--button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px var(--shadow-color);
 }
 
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
-img {
-  max-width: 500px;
-  max-height: 500px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px var(--shadow-color);
-  display: none;
-  margin: 20px 0;
+#randomButton:active {
+  transform: scale(0.97) translateY(0); /* Combine transforms */
+  transition: transform 0.1s ease-in-out;
 }
 
-img.show {
-  display: block;
-}
-
-h1 {
-  color: var(--text-color);
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-size: 36px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: backInLeft 1s ease-out;
-}
-
-p {
-  color: var(--text-secondary);
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
-  animation: fadeIn 2s ease-in;
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 input {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   border: 2px solid var(--input-border);
   border-radius: 10px;
   padding: 10px 25px;
   background: transparent;
-  max-width: 190px;
-  animation: fadeIn 2s ease-in;
+  width: 190px;
   font-size: 16px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 input::placeholder {
@@ -295,53 +115,49 @@ input::placeholder {
   opacity: 0.7;
 }
 
+.image-container {
+  margin: 20px 0;
+  min-height: 500px; /* Reserve space to prevent layout shift */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  display: none; /* Controlled by JS */
+}
+
 .player-name {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
-  text-align: center;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: none;
-}
-
-.player-name.show {
-  display: block;
-  animation: fadeIn 1s ease-in;
+  display: none; /* Controlled by JS */
 }
 
 .progress-container {
   width: 80%;
   max-width: 500px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  margin: 20px 0;
-  display: none;
   border: 2px solid var(--input-border);
-}
-
-.progress-container.show {
-  display: block;
-  animation: fadeIn 0.3s ease-in;
+  display: none; /* Controlled by JS */
 }
 
 .progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(
-    90deg,
-    var(--button-bg),
-    var(--input-border),
-    var(--button-bg)
-  );
-  background-size: 200% 100%;
+  background: linear-gradient(90deg, var(--button-hover), var(--button-bg));
   border-radius: 20px;
   transition: width 0.3s ease;
-  animation: shimmer 1.5s infinite;
 }
 
 .progress-text {
@@ -349,108 +165,18 @@ input::placeholder {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: var(--text-secondary);
+  color: white;
   font-weight: bold;
   font-size: 14px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  z-index: 1;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-=======
-
-@keyframes buttonClick {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-#randomButton.clicked {
-  animation: buttonClick 0.3s ease-in-out;
-
-}
-
-input:focus {
-    outline: none;
-    border-color: var(--heading-color);
-    box-shadow: 0 0 10px var(--shadow-color);
-    transform: scale(1.05);
-}
-
-input::placeholder {
-    color: var(--text-color);
-    opacity: 0.7;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Responsive Design */
+/* --- RESPONSIVE DESIGN --- */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 28px;
-    }
-    
-    img {
-        max-width: 90vw;
-        max-height: 400px;
-    }
-    
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
-    }
-    
-    #themeToggle {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-    
-    .player-caption {
-        font-size: 16px;
-        padding: 10px;
-    }
+  h1 {
+    font-size: 28px;
+  }
+  img {
+    max-width: 90vw;
+  }
 }

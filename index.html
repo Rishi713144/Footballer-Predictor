@@ -12,22 +12,26 @@
 </head>
 
 <body>
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle">
+        <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+    </div>
+
     <h1>Which footballer are you?</h1>
     
-
-   
     <input type="text" id="userName" placeholder="Your name">
     <br>
-    <img id="randomImage" src="" alt="Random Image">
-    <br>
     
-
-
+    <!-- Image Container with Caption -->
+    <div class="image-container">
+        <img id="randomImage" src="" alt="Random Image">
+        <div id="playerCaption" class="player-caption"></div>
+    </div>
+    <br>
 
     <p>Click the button to find out which footballer you are!</p>
     <button onclick="showRandomImage()">Click Here!</button>
-    <img id="randomImage" src="" alt="Random Image">
-   <button onclick="resetProgram()">Reset</button>
+    <button onclick="resetProgram()">Reset</button>
 </body>
 
 </html>

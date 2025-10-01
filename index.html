@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Footballer Predictor</title>
-    <link rel="stylesheet" href="style.css" class="rel">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="style.css" class="rel" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <script src="Script.js" defer></script>
-    
-</head>
+  </head>
+
+  <body>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      🌓 Toggle Theme
+    </button>
+
 
 <body>
     <!-- Theme Toggle Button -->
@@ -34,4 +41,24 @@
     <button onclick="resetProgram()">Reset</button>
 </body>
 
+    <h1>Which footballer are you?</h1>
+
+    <input type="text" id="userName" placeholder="Your name" />
+    <br />
+
+    <p>Click the button to find out which footballer you are!</p>
+    <button id="randomButton" onclick="showRandomImage()">Click Here!</button>
+    <button onclick="resetProgram()">Reset</button>
+
+    <br />
+
+    <div class="progress-container" id="progressContainer">
+      <div class="progress-bar" id="progressBar"></div>
+      <span class="progress-text" id="progressText">Loading...</span>
+    </div>
+
+
+    <img id="randomImage" src="" alt="Random Image" />
+    <div class="player-name" id="playerName"></div>
+  </body>
 </html>

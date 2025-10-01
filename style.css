@@ -75,3 +75,13 @@ input {
   animation: fadeIn 2s ease-in;
 }
 
+.btn-animate {
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+

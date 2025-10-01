@@ -72,3 +72,15 @@ function resetProgram() {
     document.getElementById('userName').value = '';
     alert('Program has been reset. Please enter your name to show a new random image.');
 }
+
+// Animation for button click
+const btn = document.getElementById('show-random-btn');
+
+btn.addEventListener('click', () => {
+  btn.classList.add('btn-animate');
+});
+
+// remove class after animation so it can re-run next time
+btn.addEventListener('animationend', () => {
+  btn.classList.remove('btn-animate');
+});

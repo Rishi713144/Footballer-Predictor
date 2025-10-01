@@ -67,3 +67,24 @@ If the image collection is empty, an alert will notify you.
 
 [MIT License](LICENSE)
 
+
+# ⚽ Footballer Predictor  
+
+Footballer Predictor is a fun web app where you enter your name and get matched with a random footballer image. Once the image is shown, the program stops and can only be restarted with the Reset button.  
+
+---
+
+## ✨ Features  
+- Enter your name before showing an image  
+- Displays a random footballer from a collection  
+- Program stops after one image (final result)  
+- Reset button to start again  
+- Simple, responsive, and customizable  
+
+---
+
+## 🚀 Getting Started  
+1. **Clone the repo**  
+   ```bash
+   git clone https://github.com/your-username/footballer-predictor.git
+   cd footballer-predictor

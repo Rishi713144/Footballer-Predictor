@@ -1,34 +1,37 @@
-<html lang="en" data-theme="dark"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Footballer Predictor</title>
-    <link rel="stylesheet" href="style.css" class="rel">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="Script.js" defer=""></script>
+    <link rel="stylesheet" href="style.css" class="rel" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="script.js" defer></script>
   </head>
 
   <body>
-    <button class="theme-toggle" onclick="toggleTheme()">
-      🌓 Toggle Theme
-    </button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
 
     <h1>Which footballer are you?</h1>
 
-    <input type="text" id="userName" placeholder="Your name">
-    <br>
+    <input type="text" id="userName" placeholder="Your name" />
+    <br />
 
     <p>Click the button to find out which footballer you are!</p>
     <button id="randomButton" onclick="showRandomImage()">Click Here!</button>
     <button onclick="resetProgram()">Reset</button>
 
-    <br>
+    <br />
 
     <div class="progress-container" id="progressContainer">
       <div class="progress-bar" id="progressBar"></div>
       <span class="progress-text" id="progressText">Loading...</span>
     </div>
 
-    <img id="randomImage" src="" alt="Random Image">
-    <div class="player-name" id="playerName"></div>
-  
-</body></html>
+    <img id="randomImage" src="" alt="Random Image" />
+    <p id="playerName" class="info"></p>
+    <p id="playerFact" class="info"></p>
+  </body>
+</html>

@@ -1,137 +1,116 @@
 const footballers = [
   {
     name: "Erling Haaland",
-    image:
-      "https://images.teamtalk.com/content/uploads/2022/10/02160859/erling-haaland-man-city-2022.jpg",
+    image: "https://images.teamtalk.com/content/uploads/2022/10/02160859/erling-haaland-man-city-2022.jpg",
+    fact: "Norwegian striker, known for his insane goal-scoring at Manchester City.",
   },
   {
     name: "Lionel Messi",
-    image:
-      "https://s.france24.com/media/display/451ed2b8-eed6-11ea-afdd-005056bf87d6/w:1280/p:4x3/messi-1805.jpg",
+    image: "https://s.france24.com/media/display/451ed2b8-eed6-11ea-afdd-005056bf87d6/w:1280/p:4x3/messi-1805.jpg",
+    fact: "Argentine magician, 8-time Ballon d'Or winner, 2022 World Cup champion.",
   },
   {
     name: "Kylian Mbappé",
-    image:
-      "https://miro.medium.com/v2/resize:fit:1400/1*SH23000Oy7JRqyslNyPGoA.jpeg",
+    image: "https://miro.medium.com/v2/resize:fit:1400/1*SH23000Oy7JRqyslNyPGoA.jpeg",
+    fact: "French speedster who scored a hat-trick in the 2022 World Cup final.",
   },
   {
     name: "Cristiano Ronaldo",
     image: "https://gymnation.com/media/bgjgtc1d/cr7-2008.jpg",
+    fact: "Portuguese legend, 5-time Ballon d'Or winner, CR7 brand icon.",
   },
   {
     name: "Pelé",
-    image:
-      "https://static01.nyt.com/images/2022/12/22/multimedia/00pele-photos-1-32de/00pele-photos-1-32de-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+    image: "https://static01.nyt.com/images/2022/12/22/multimedia/00pele-photos-1-32de/00pele-photos-1-32de-articleLarge.jpg?quality=75&auto=webp&disable=upscale",
+    fact: "Brazilian king, only player with 3 World Cups.",
   },
   {
-    name: "Maradona",
-    image:
-      "https://i.pinimg.com/564x/f2/9b/ae/f29baed184ebf3c6fa25d82fc259d873.jpg",
+    name: "Diego Maradona",
+    image: "https://i.pinimg.com/564x/f2/9b/ae/f29baed184ebf3c6fa25d82fc259d873.jpg",
+    fact: "Famous for the 'Hand of God' and 1986 World Cup glory.",
   },
   {
     name: "Paolo Maldini",
-    image:
-      "https://w0.peakpx.com/wallpaper/809/437/HD-wallpaper-paolo-maldini-milan.jpg",
+    image: "https://w0.peakpx.com/wallpaper/809/437/HD-wallpaper-paolo-maldini-milan.jpg",
+    fact: "AC Milan legend, regarded as one of the greatest defenders ever.",
   },
   {
     name: "Zinedine Zidane",
-    image:
-      "https://assets.realmadrid.com/is/image/realmadrid/1330190795142?$Mobile$&fit=wrap",
+    image: "https://assets.realmadrid.com/is/image/realmadrid/1330190795142?$Mobile$&fit=wrap",
+    fact: "French midfield genius, scored twice in the 1998 World Cup final.",
   },
   {
     name: "Karim Benzema",
-    image:
-      "https://www.shutterstock.com/editorial/image-editorial/MdTdA513N1zaA6y8MDkxMzA=/karim-benzema-real-madrid-celebrates-scoring-opening-440nw-10484600u.jpg",
+    image: "https://www.shutterstock.com/editorial/image-editorial/MdTdA513N1zaA6y8MDkxMzA=/karim-benzema-real-madrid-celebrates-scoring-opening-440nw-10484600u.jpg",
+    fact: "2022 Ballon d'Or winner, Real Madrid’s lethal striker.",
   },
   {
     name: "Wayne Rooney",
     image: "https://a.espncdn.com/photo/2020/0304/r674744_1296x1296_1-1.jpg",
+    fact: "Manchester United's all-time top scorer, fierce competitor.",
+  },
+  {
+    name: "Ronaldinho",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Ronaldinho_2019.jpg",
+    fact: "Brazilian wizard, loved for his flair, tricks, and smile.",
   },
   {
     name: "David Beckham",
-    image:
-      "https://preview.redd.it/david-beckham-made-his-debut-for-manchester-united-32-years-v0-zbxrdf4k4jqd1.jpg?width=640&crop=smart&auto=webp&s=070c4d4f721791c4225b7183ba66522bee36a873",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/David_Beckham_2019.jpg",
+    fact: "England star, free-kick specialist, global fashion icon.",
   },
   {
-    name: "Lamine Yamal",
-    image:
-      "https://foto.sondakika.com/haber/2025/07/14/dogum-gununde-cuce-bireyleri-calistiran-yamal-18846835_5007_amp.jpg",
-  },
-  {
-    name: "Joao Cancelo",
-    image:
-      "https://www.fcbarcelona.com/fcbarcelona/photo/2023/09/25/08593578-2837-4af2-9235-e3a56e3db23c/2023-09-16_FCBvsBETIS_97.jpg",
-  },
-  {
-    name: "Raphinha",
-    image:
-      "https://www.aljazeera.com/wp-content/uploads/2025/01/2025-01-21T220448Z_1474946714_UP1EL1L1PBY5X_RTRMADP_3_SOCCER-CHAMPIONS-SLB-BAR-REPORT-1737497355.jpg?resize=770%2C513&quality=80",
-  },
-  {
-    name: "Gareth Bale",
-    image:
-      "https://www.economist.com/content-assets/images/20230121_BLP510.jpg",
-  },
-  {
-    name: "Neymar Jr",
-    image:
-      "https://media.cnn.com/api/v1/images/stellar/prod/220930165943-01-neymar.jpg?c=16x9&q=h_833,w_1480,c_fill",
-  },
-  {
-    name: "Luis Suárez",
-    image:
-      "https://www.fcbarcelona.com/fcbarcelona/photo/2020/09/06/c7355114-245c-48a3-b5fe-0cea11dc9379/SUAREZ-56-min.jpg",
+    name: "Neymar Jr.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/55/Neymar_2018.jpg",
+    fact: "Brazilian dribbler, famous for skills and trickery.",
   },
   {
     name: "Andrés Iniesta",
-    image:
-      "https://s.yimg.com/ny/api/res/1.2/f_SI1D7ZhLzV2drrn948LA--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTQyNztjZj13ZWJw/https://media.zenfs.com/en/football_espana_articles_993/2f146b947dd93dc57899e2174a835bf8",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Andr%C3%A9s_Iniesta_2018.jpg",
+    fact: "Spain’s midfield brain, scored the 2010 World Cup winning goal.",
   },
   {
-    name: "Pedri",
-    image:
-      "https://platform.barcablaugranes.com/wp-content/uploads/sites/21/chorus/uploads/chorus_asset/file/25819505/2191173318.jpg?quality=90&strip=all&crop=0%2C0%2C100%2C99.987501562305&w=2400",
+    name: "Xavi Hernández",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/20/Xavi_2011.jpg",
+    fact: "Barcelona and Spain legend, master of passing and vision.",
   },
   {
-    name: "Buffon",
-    image:
-      "https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2023%2F0803%2Fr1205648_1296x729_16%2D9.jpg",
+    name: "Thierry Henry",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Thierry_Henry_2012.jpg",
+    fact: "Arsenal legend, Premier League icon, known for silky finishing.",
   },
   {
-    name: "Son Heung-min",
-    image:
-      "https://i.guim.co.uk/img/media/695be08ccc972411834346ccb50f1b5d4411ba22/49_55_2451_1471/master/2451.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=a7e210f7b4721335a9eca1b7ee2d5660",
+    name: "Roberto Carlos",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Roberto_Carlos_2011.jpg",
+    fact: "Brazilian left-back famous for his thunderbolt free-kicks.",
   },
   {
-    name: "Beckenbauer",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E12AQHmcaBrpXzs0g/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1683063381087?e=2147483647&v=beta&t=uI25wJBqJOO7fcCNg2etXqte7kMJ5hAj7nKhozG35KQ",
+    name: "Luka Modrić",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Luka_Modric_2018.jpg",
+    fact: "Croatian playmaker, 2018 Ballon d’Or winner.",
   },
   {
-    name: "Johan Cruyff",
-    image:
-      "https://cdn.artphotolimited.com/images/60913d60bd40b85323893a87/1000x1000/der-beruehmte-johan-cruyff-vom-fc-barcelona.jpg",
+    name: "Mohamed Salah",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mohamed_Salah_2018.jpg",
+    fact: "Egyptian King of Liverpool, blistering pace and goals.",
   },
   {
-    name: "Lautaro Martínez",
-    image:
-      "https://icdn.sempreinter.com/wp-content/uploads/2025/05/Lautaro-Martinez-Inter-Milan-4.jpg",
-  },
+    name: "Didier Drogba",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Didier_Drogba_2015.jpg",
+    fact: "Chelsea’s big-game striker, loved for his clutch goals.",
+  }
 ];
 
 let isProgramStopped = false;
 let currentFootballer = null;
 
 function showRandomImage() {
-
   const randomButton = document.getElementById("randomButton");
   randomButton.classList.add("clicked");
 
-  
   setTimeout(() => {
     randomButton.classList.remove("clicked");
   }, 300);
- 
 
   const userName = document.getElementById("userName").value.trim();
   if (!userName) {
@@ -152,18 +131,18 @@ function showRandomImage() {
 
   const imageElement = document.getElementById("randomImage");
   const playerNameElement = document.getElementById("playerName");
+  const playerFactElement = document.getElementById("playerFact");
   const progressContainer = document.getElementById("progressContainer");
   const progressBar = document.getElementById("progressBar");
   const progressText = document.getElementById("progressText");
 
-  // Hide image and player name, show progress bar
   imageElement.classList.remove("show");
   playerNameElement.classList.remove("show");
+  playerFactElement.classList.remove("show");
   progressContainer.classList.add("show");
   progressBar.style.width = "0%";
   progressText.textContent = "Loading...";
 
-  // Simulate progress
   let progress = 0;
   const progressInterval = setInterval(() => {
     progress += Math.random() * 15;
@@ -175,7 +154,6 @@ function showRandomImage() {
   imageElement.src = currentFootballer.image;
 
   imageElement.onload = () => {
-    // Complete the progress bar
     clearInterval(progressInterval);
     progressBar.style.width = "100%";
     progressText.textContent = "100%";
@@ -184,13 +162,13 @@ function showRandomImage() {
       progressContainer.classList.remove("show");
       imageElement.classList.add("show");
       playerNameElement.textContent = currentFootballer.name;
+      playerFactElement.textContent = currentFootballer.fact;
       playerNameElement.classList.add("show");
+      playerFactElement.classList.add("show");
       isProgramStopped = true;
       showFinalResult();
     }, 500);
   };
-
-  
 }
 
 function showFinalResult() {
@@ -201,7 +179,7 @@ function showFinalResult() {
     .forEach((button) => (button.disabled = true));
   const userName = document.getElementById("userName").value.trim();
   alert(
-    `${userName}, you are ${currentFootballer.name}! The program has stopped. Click Reset to start again.`
+    `${userName}, you are ${currentFootballer.name}! ${currentFootballer.fact} The program has stopped. Click Reset to start again.`
   );
 }
 
@@ -212,20 +190,13 @@ function resetProgram() {
     .querySelectorAll("button")
     .forEach((button) => (button.disabled = false));
 
-  const imageElement = document.getElementById("randomImage");
-  const playerNameElement = document.getElementById("playerName");
-  const progressContainer = document.getElementById("progressContainer");
-
-  imageElement.src = "";
-  imageElement.classList.remove("show");
-  playerNameElement.textContent = "";
-  playerNameElement.classList.remove("show");
-  progressContainer.classList.remove("show");
+  document.getElementById("randomImage").src = "";
+  document.getElementById("playerName").textContent = "";
+  document.getElementById("playerFact").textContent = "";
+  document.getElementById("progressContainer").classList.remove("show");
   document.getElementById("userName").value = "";
 
-  alert(
-    "Program has been reset. Please enter your name to show a new random footballer."
-  );
+  alert("Program has been reset. Please enter your name to show a new random footballer.");
 }
 
 function toggleTheme() {
@@ -234,7 +205,4 @@ function toggleTheme() {
   document.documentElement.setAttribute("data-theme", newTheme);
 }
 
-
 document.documentElement.setAttribute("data-theme", "dark");
-
-

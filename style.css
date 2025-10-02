@@ -6,218 +6,285 @@
   --input-border: #8707ff;
   --text-secondary: white;
   --shadow-color: rgba(0, 0, 0, 0.2);
+  --accent-color: rgb(99, 200, 206);
+  --primary-color: #ffeb3b;
+  --card-background: rgba(0, 0, 0, 0.15);
+  --border-color: #8707ff;
 }
 
 [data-theme="light"] {
-  --bg-color: #f0f0f0;
-  --text-color: #2c3e50;
-  --button-bg: #3498db;
-  --button-hover: #2980b9;
-  --input-border: #3498db;
-  --text-secondary: #34495e;
-  --shadow-color: rgba(0, 0, 0, 0.1);
+--bg-color: #f0f0f0;
+--text-color: #2c3e50;
+--button-bg: #3498db;
+--button-hover: #2980b9;
+--input-border: #3498db;
+--text-secondary: #34495e;
+--shadow-color: rgba(0, 0, 0, 0.1);
+ --accent-color: #3498db;
+ --primary-color: #e67e22;
+ --card-background: rgba(255, 255, 255, 0.7);
+ --border-color: #bdc3c7;
+}
+
+/* Fix for initial hiding */
+.hidden-initial {
+ display: none !important; 
+ opacity: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
-  transition: background-color 0.3s ease;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+margin: 0;
+padding: 20px;
+ font-family: Arial, sans-serif;
+ background-color: var(--bg-color);
+ transition: background-color 0.3s ease;
 }
 
 .theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: var(--button-bg);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+position: absolute;
+top: 20px;
+right: 20px;
+padding: 10px 20px;
+font-size: 16px;
+cursor: pointer;
+background-color: var(--button-bg);
+color: white;
+border: none;
+border-radius: 5px;
+transition: background-color 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: var(--button-hover);
+ background-color: var(--button-hover);
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  background-color: var(--button-bg);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin: 10px;
-  transition: background-color 0.3s ease;
+ padding: 10px 20px;
+ font-size: 16px;
+ cursor: pointer;
+ background-color: var(--button-bg);
+ color: white;
+ border: none;
+ border-radius: 5px;
+ margin: 10px;
+ transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: var(--button-hover);
+background-color: var(--button-hover);
 }
 
 button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+ opacity: 0.5;
+ cursor: not-allowed;
 }
 
 img {
-  max-width: 500px;
-  max-height: 500px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px var(--shadow-color);
-  display: none;
-  margin: 20px 0;
+ max-width: 500px;
+ max-height: 500px;
+ border-radius: 10px;
+ box-shadow: 0 4px 8px var(--shadow-color);
+ display: none;
+ margin: 20px 0;
 }
 
 img.show {
-  display: block;
+display: block;
 }
 
 h1 {
-  color: var(--text-color);
-  margin-bottom: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  font-size: 36px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  animation: backInLeft 1s ease-out;
+ color: var(--text-color);
+ margin-bottom: 20px;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+ font-size: 36px;
+ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ animation: backInLeft 1s ease-out;
 }
 
 p {
-  color: var(--text-secondary);
-  font-size: 18px;
-  text-align: center;
-  max-width: 600px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
-  animation: fadeIn 2s ease-in;
+color: var(--text-secondary);
+font-size: 18px;
+text-align: center;
+max-width: 600px;
+line-height: 1.6;
+margin-bottom: 20px;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+letter-spacing: 1px;
+animation: fadeIn 2s ease-in;
 }
 
 input {
-  color: var(--text-secondary);
-  border: 2px solid var(--input-border);
-  border-radius: 10px;
-  padding: 10px 25px;
-  background: transparent;
-  max-width: 190px;
-  animation: fadeIn 2s ease-in;
-  font-size: 16px;
-  margin-bottom: 20px;
+color: var(--text-secondary);
+border: 2px solid var(--input-border);
+border-radius: 10px;
+padding: 10px 25px;
+background: transparent;
+max-width: 190px;
+animation: fadeIn 2s ease-in;
+font-size: 16px;
+margin-bottom: 20px;
 }
 
 input::placeholder {
-  color: var(--text-secondary);
-  opacity: 0.7;
+color: var(--text-secondary);
+opacity: 0.7;
 }
 
-.player-name {
-  color: var(--text-secondary);
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 10px;
-  text-align: center;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: none;
+/* Base style for all info containers */
+.info {
+margin-top: 10px;
+margin-bottom: 10px;
+opacity: 0;
+transition: opacity 0.5s ease, transform 0.5s ease;
+transform: translateY(10px);
 }
 
-.player-name.show {
-  display: block;
-  animation: fadeIn 1s ease-in;
+.info.show {
+opacity: 1;
+transform: translateY(0);
+/* Ensures block display when visible */
+display: block !important;
+}
+
+/* Style the Player Name */
+#playerName {
+font-size: 28px;
+font-weight: bold;
+color: var(--text-color); 
+text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+margin-top: 20px;
+}
+
+/* Style the Position text */
+#playerPosition {
+font-weight: 600;
+font-size: 1.1em;
+color: var(--primary-color); 
+margin-bottom: 30px;
+}
+
+/* Style the Player Bio */
+#playerBio {
+font-style: italic;
+font-size: 1.05em;
+max-width: 700px;
+}
+
+/* Style the Achievements section */
+#playerAchievements {
+margin-top: 25px;
+text-align: center;
+max-width: 600px;
+margin-left: auto;
+margin-right: auto;
+padding: 15px 30px;
+border-radius: 8px;
+background-color: var(--card-background); 
+border: 1px solid var(--border-color); 
+}
+
+/* Style the Achievements heading */
+#playerAchievements h3 {
+color: var(--accent-color); 
+font-size: 1.3em;
+margin-bottom: 10px;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+#achievementsList {
+ list-style-type: none; 
+ padding: 0;
+ font-size: 0.95em;
+ line-height: 1.8;
+ color: var(--text-secondary);
 }
 
 .progress-container {
-  width: 80%;
-  max-width: 500px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  margin: 20px 0;
-  display: none;
-  border: 2px solid var(--input-border);
+width: 80%;
+max-width: 500px;
+height: 40px; 
+background-color: rgba(255, 255, 255, 0.1);
+border-radius: 20px; 
+overflow: hidden;
+position: relative;
+margin: 20px 0;
+display: none;
+border: 2px solid var(--input-border);
 }
 
 .progress-container.show {
-  display: block;
-  animation: fadeIn 0.3s ease-in;
+display: block;
+animation: fadeIn 0.3s ease-in;
 }
 
 .progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(
-    90deg,
-    var(--button-bg),
-    var(--input-border),
-    var(--button-bg)
-  );
-  background-size: 200% 100%;
-  border-radius: 20px;
-  transition: width 0.3s ease;
-  animation: shimmer 1.5s infinite;
+height: 100%;
+width: 0%;
+background: linear-gradient(
+ 90deg,
+ var(--button-bg),
+ var(--input-border),
+ var(--button-bg)
+);
+background-size: 200% 100%;
+border-radius: 18px; 
+transition: width 0.3s ease;
+animation: shimmer 1.5s infinite;
 }
 
 .progress-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: var(--text-secondary);
-  font-weight: bold;
-  font-size: 14px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  z-index: 1;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: var(--text-secondary);
+font-weight: bold;
+font-size: 14px;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+z-index: 1;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+ from {
+ opacity: 0;
+ }
+ to {
+ opacity: 1;
+ }
 }
 
 @keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
+0% {
+background-position: -200% 0;
+}
+100% {
+background-position: 200% 0;
+}
 }
 
 
 @keyframes buttonClick {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
+0% {
+ transform: scale(1);
+}
+50% {
+ transform: scale(0.95);
+}
+100% {
+transform: scale(1);
+}
 }
 
 #randomButton.clicked {
-  animation: buttonClick 0.3s ease-in-out;
+animation: buttonClick 0.3s ease-in-out;
 }
-

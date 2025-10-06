@@ -1,4 +1,4 @@
-    const footballers = [
+const footballers = [
       {
         name: "Erling Haaland",
         image: "https://images.teamtalk.com/content/uploads/2022/10/02160859/erling-haaland-man-city-2022.jpg",
@@ -153,7 +153,7 @@
       },
       {
         name: "Didier Drogba",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Didier_Drogba_2015.jpg",
+        image: "https://e0.365dm.com/18/05/2048x1152/skysports-didier-drogba-chelsea_4312278.jpg",
         position: "Forward",
         bio: "Chelsea’s big-game striker and Ivorian legend, loved for his physical strength, leadership, and clutch goals in major finals.",
         achievements: ["4x Premier League Winner", "UEFA Champions League Winner (2012)", "2x Premier League Golden Boot"],
@@ -195,6 +195,8 @@
     let currentFootballer = null;
     let currentQuestionIndex = 0;
     let userTraits = { power: 0, flair: 0, leadership: 0, teamwork: 0 };
+    let progressInterval = null;
+    let timeouts = [];
 
     function startQuiz() {
       const userName = document.getElementById("userName").value.trim();
@@ -204,10 +206,14 @@
       }
 
       document.getElementById("startQuizButton").classList.add("clicked");
-      setTimeout(() => {
+      timeouts.push(setTimeout(() => {
         document.getElementById("startQuizButton").classList.remove("clicked");
-      }, 300);
+      }, 300));
 
+      isProgramStopped = false;
+      currentFootballer = null;
+      currentQuestionIndex = 0;
+      userTraits = { power: 0, flair: 0, leadership: 0, teamwork: 0 };
       document.getElementById("quizContainer").classList.add("show");
       document.getElementById("startQuizButton").disabled = true;
       showQuestion();
@@ -248,31 +254,82 @@
       document.getElementById("progressContainer").classList.add("show");
 
       let progress = 0;
-      const progressInterval = setInterval(() => {
-        progress += 10; // Smoother, predictable increment
+      progressInterval = setInterval(() => {
+        if (isProgramStopped) {
+          clearInterval(progressInterval);
+          progressInterval = null;
+          return;
+        }
+        progress += 10;
         if (progress >= 100) {
           clearInterval(progressInterval);
+          progressInterval = null;
           progress = 100;
           document.getElementById("progressText").textContent = "Match Found!";
-          displayFootballer();
+          if (!isProgramStopped) {
+            const match = findBestMatch();
+            if (match) displayFootballer();
+            else {
+              document.getElementById("progressContainer").classList.remove("show");
+              document.getElementById("resultContainer").classList.add("show");
+              document.getElementById("playerName").textContent = "No Match Found";
+              document.getElementById("playerName").classList.remove("hidden-initial");
+              document.getElementById("playerName").classList.add("show");
+              document.getElementById("playerBio").textContent = "Sorry, we couldn't find a footballer that matches your traits. Try again!";
+              document.getElementById("playerBio").classList.remove("hidden-initial");
+              document.getElementById("playerBio").classList.add("show");
+              isProgramStopped = true;
+              document.querySelectorAll('button:not([onclick="resetProgram()"]):not(.theme-toggle)').forEach(button => button.disabled = true);
+            }
+          }
         }
         document.getElementById("progressBar").style.width = `${progress}%`;
         document.getElementById("progressText").textContent = `Analyzing... ${Math.floor(progress)}%`;
-      }, 150); // Adjusted interval for smoother animation
+      }, 150);
 
-      // Fallback timeout to prevent hanging
-      setTimeout(() => {
-        if (progress < 100) {
+      timeouts.push(setTimeout(() => {
+        if (progress < 100 && !isProgramStopped) {
           clearInterval(progressInterval);
+          progressInterval = null;
           document.getElementById("progressBar").style.width = "100%";
           document.getElementById("progressText").textContent = "Match Found!";
-          displayFootballer();
+          const match = findBestMatch();
+          if (match) displayFootballer();
+          else {
+            document.getElementById("progressContainer").classList.remove("show");
+            document.getElementById("resultContainer").classList.add("show");
+            document.getElementById("playerName").textContent = "No Match Found";
+            document.getElementById("playerName").classList.remove("hidden-initial");
+            document.getElementById("playerName").classList.add("show");
+            document.getElementById("playerBio").textContent = "Sorry, we couldn't find a footballer that matches your traits. Try again!";
+            document.getElementById("playerBio").classList.remove("hidden-initial");
+            document.getElementById("playerBio").classList.add("show");
+            isProgramStopped = true;
+            document.querySelectorAll('button:not([onclick="resetProgram()"]):not(.theme-toggle)').forEach(button => button.disabled = true);
+          }
         }
-      }, 3000); // 3-second fallback
+      }, 3000));
     }
 
     function displayFootballer() {
+      if (isProgramStopped) return;
+
       currentFootballer = findBestMatch();
+      if (!currentFootballer) {
+        console.error("No footballer matched in displayFootballer.");
+        document.getElementById("progressContainer").classList.remove("show");
+        document.getElementById("resultContainer").classList.add("show");
+        document.getElementById("playerName").textContent = "No Match Found";
+        document.getElementById("playerName").classList.remove("hidden-initial");
+        document.getElementById("playerName").classList.add("show");
+        document.getElementById("playerBio").textContent = "Sorry, we couldn't find a footballer that matches your traits. Try again!";
+        document.getElementById("playerBio").classList.remove("hidden-initial");
+        document.getElementById("playerBio").classList.add("show");
+        isProgramStopped = true;
+        document.querySelectorAll('button:not([onclick="resetProgram()"]):not(.theme-toggle)').forEach(button => button.disabled = true);
+        return;
+      }
+
       const imageElement = document.getElementById("randomImage");
       const playerNameElement = document.getElementById("playerName");
       const playerPositionElement = document.getElementById("playerPosition");
@@ -284,6 +341,8 @@
       imageElement.src = currentFootballer.image;
 
       const showResult = () => {
+        if (isProgramStopped) return;
+
         document.getElementById("progressContainer").classList.remove("show");
         resultContainer.classList.add("show");
 
@@ -314,21 +373,22 @@
         document.querySelectorAll('button:not([onclick="resetProgram()"]):not(.theme-toggle)').forEach(button => button.disabled = true);
       };
 
-      // Handle image load
       imageElement.onload = showResult;
-
-      // Handle image load failure
       imageElement.onerror = () => {
         console.error("Image failed to load:", currentFootballer.image);
-        showResult(); // Proceed anyway
+        showResult();
       };
 
-      // Fallback timeout for image load
-      setTimeout(showResult, 2000); // 2-second fallback if image doesn't trigger onload
+      timeouts.push(setTimeout(showResult, 2000));
     }
 
     function findBestMatch() {
-      let bestMatch = null;
+      if (footballers.length === 0) {
+        console.error("Footballers array is empty.");
+        return null;
+      }
+
+      let bestMatch = footballers[0];
       let minDistance = Infinity;
 
       footballers.forEach(footballer => {
@@ -348,26 +408,50 @@
     }
 
     function resetProgram() {
-      isProgramStopped = false;
+      isProgramStopped = true;
       currentFootballer = null;
       currentQuestionIndex = 0;
       userTraits = { power: 0, flair: 0, leadership: 0, teamwork: 0 };
 
+      if (progressInterval) {
+        clearInterval(progressInterval);
+        progressInterval = null;
+      }
+
+      timeouts.forEach(clearTimeout);
+      timeouts = [];
+
+      const imageElement = document.getElementById("randomImage");
+      imageElement.src = "";
+      imageElement.removeAttribute("src");
+      imageElement.classList.remove("show");
+      imageElement.onload = null;
+      imageElement.onerror = null;
+
+      const optionsContainer = document.getElementById("optionsContainer");
+      optionsContainer.innerHTML = "";
+      optionsContainer.replaceChildren();
+
       document.querySelectorAll("button").forEach(button => button.disabled = false);
-      document.getElementById("randomImage").src = "";
-      document.getElementById("randomImage").classList.remove("show");
       document.getElementById("playerName").textContent = "";
       document.getElementById("playerName").classList.add("hidden-initial");
+      document.getElementById("playerName").classList.remove("show");
       document.getElementById("playerPosition").textContent = "";
       document.getElementById("playerPosition").classList.add("hidden-initial");
+      document.getElementById("playerPosition").classList.remove("show");
       document.getElementById("playerBio").textContent = "";
       document.getElementById("playerBio").classList.add("hidden-initial");
+      document.getElementById("playerBio").classList.remove("show");
       document.getElementById("playerAchievements").classList.add("hidden-initial");
+      document.getElementById("playerAchievements").classList.remove("show");
       document.getElementById("achievementsList").innerHTML = "";
       document.getElementById("progressContainer").classList.remove("show");
       document.getElementById("quizContainer").classList.remove("show");
       document.getElementById("resultContainer").classList.remove("show");
+      document.getElementById("progressBar").style.width = "0%";
+      document.getElementById("progressText").textContent = "Analyzing stats...";
       document.getElementById("userName").value = "";
+      document.getElementById("questionText").innerHTML = "";
 
       alert("Program has been reset. Please enter your name to start a new quiz.");
     }

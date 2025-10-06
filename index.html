@@ -14,34 +14,39 @@
   </head>
 
   <body>
-    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
-
-    <h1>Which footballer are you?</h1>
-
-        <input type="text" id="userName" placeholder="Your name" onkeydown="handleEnter(event)" />
-    <br />
-
-    <p>Click the button to find out which footballer you are!</p>
-    <button id="randomButton" onclick="showRandomImage()">Click Here!</button>
-    <button onclick="resetProgram()">Reset</button>
-
-    <br />
-
-    <div class="progress-container" id="progressContainer">
-      <div class="progress-bar" id="progressBar"></div>
-      <span class="progress-text" id="progressText">Analyzing stats...</span>
-    </div>
-
-    <img id="randomImage" src="" alt="Random Image" />
-    
-        <p id="playerName" class="info hidden-initial"></p>
-    <p id="playerPosition" class="info hidden-initial"></p>
-    <p id="playerBio" class="info hidden-initial"></p>
-    
-    <div id="playerAchievements" class="info hidden-initial"> 
-        <h3>Key Achievements:</h3>
-        <ul id="achievementsList"></ul>
-    </div>
-  </body>
+  <h1>Which Footballer Are You?</h1>
+  <div class="input-container">
+    <input
+      type="text"
+      id="userName"
+      placeholder="Enter your name"
+      onkeypress="handleEnter(event)"
+    />
+  </div>
+  <div class="button-container">
+    <button id="startQuizButton" onclick="startQuiz()">Start Quiz</button>
+    <button onclick="resetProgram()">Reset</button>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </div>
+  <div id="quizContainer">
+    <div id="questionText" class="quiz-question"></div>
+    <div id="optionsContainer"></div>
+  </div>
+  <div id="progressContainer">
+    <div id="progressBackground">
+      <div id="progressBar"></div>
+    </div>
+    <div id="progressText">Analyzing stats...</div>
+  </div>
+  <div id="resultContainer">
+    <img id="randomImage" src="" alt="Footballer Image" />
+    <h2 id="playerName" class="hidden-initial"></h2>
+    <p id="playerPosition" class="hidden-initial"></p>
+    <p id="playerBio" class="hidden-initial"></p>
+    <div id="playerAchievements" class="hidden-initial">
+      <h3>Achievements:</h3>
+      <ul id="achievementsList"></ul>
+    </div>
+  </div>
 </html>
 

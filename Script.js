@@ -153,7 +153,7 @@ const footballers = [
       },
       {
         name: "Didier Drogba",
-        image: "https://e0.365dm.com/18/05/2048x1152/skysports-didier-drogba-chelsea_4312278.jpg",
+        image: "https://img.chelseafc.com/image/upload/f_auto,w_1440,c_fill,g_faces,q_90/The%205th%20Stand%20app%20editorial/Drogba_120.png",
         position: "Forward",
         bio: "Chelsea’s big-game striker and Ivorian legend, loved for his physical strength, leadership, and clutch goals in major finals.",
         achievements: ["4x Premier League Winner", "UEFA Champions League Winner (2012)", "2x Premier League Golden Boot"],
@@ -469,3 +469,4 @@ const footballers = [
     }
 
     document.documentElement.setAttribute("data-theme", "dark");
+

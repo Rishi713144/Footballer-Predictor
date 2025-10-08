@@ -81,7 +81,7 @@ const footballers = [
       },
       {
         name: "Ronaldinho",
-        image: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Ronaldinho_2019.jpg",
+        image: "https://64.media.tumblr.com/df916c4a2d45fecbc9a9897b390b9abb/tumblr_oyyh59qk7A1wnzah8o3_1280.jpg",
         position: "Attacking Midfielder",
         bio: "The Brazilian wizard, loved globally for his flair, mesmerizing tricks, and infectious smile. He defined an era of joyous, free-flowing football.",
         achievements: ["Ballon d'Or Winner (2005)", "FIFA World Cup Champion (2002)", "UEFA Champions League Winner"],
@@ -105,7 +105,7 @@ const footballers = [
       },
       {
         name: "Andrés Iniesta",
-        image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Andr%C3%A9s_Iniesta_2018.jpg",
+        image: "https://i.pinimg.com/1200x/0b/f4/8d/0bf48d5b0ea8ba1a7bbeead314a82779.jpg",
         position: "Midfielder",
         bio: "Spain’s midfield brain, a master of control and passing. He scored the iconic 2010 World Cup winning goal and was a central figure in Barcelona's greatest era.",
         achievements: ["FIFA World Cup Champion (2010)", "4x UEFA Champions League Winner", "9x La Liga Champion"],
@@ -113,7 +113,7 @@ const footballers = [
       },
       {
         name: "Xavi Hernández",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/20/Xavi_2011.jpg",
+        image: "https://www.fcbarcelona.com/photo-resources/2019/03/12/62f67c7f-28fa-49d4-aa5f-9a0502c46c41/znYiAFfh.jpg?width=1200&height=750",
         position: "Midfielder",
         bio: "Barcelona and Spain legend, the 'puppet master,' known for his masterful passing, vision, and tactical intelligence, dictating the tempo of the game.",
         achievements: ["FIFA World Cup Champion (2010)", "4x UEFA Champions League Winner", "8x La Liga Champion"],
@@ -121,7 +121,7 @@ const footballers = [
       },
       {
         name: "Thierry Henry",
-        image: "https://upload.wikimedia.org/wikipedia/commons/1/13/Thierry_Henry_2012.jpg",
+        image: "https://assets.goal.com/images/v3/bltd6c4bc35e2449015/a5c71e7f5a974c31cf493e5a1b13a5d796bad56f.jpg?auto=webp&format=pjpg&width=3840&quality=60",
         position: "Forward",
         bio: "Arsenal legend and Premier League icon, known for his blistering pace, silky finishing, and tendency to score from cutting in off the left wing.",
         achievements: ["FIFA World Cup Champion (1998)", "2x Premier League Winner", "UEFA Champions League Winner"],
@@ -129,7 +129,7 @@ const footballers = [
       },
       {
         name: "Roberto Carlos",
-        image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Roberto_Carlos_2011.jpg",
+        image: "https://cloudfront-us-east-2.images.arcpublishing.com/reuters/M4G6JQ2SMFM7VK2V6Z5RRR3RYI.jpg",
         position: "Defender",
         bio: "Brazilian left-back famous for his incredible speed, stamina, and thunderbolt free-kicks, particularly his legendary 'impossible' goal against France.",
         achievements: ["FIFA World Cup Champion (2002)", "3x UEFA Champions League Winner", "4x La Liga Champion"],
@@ -137,7 +137,7 @@ const footballers = [
       },
       {
         name: "Luka Modrić",
-        image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Luka_Modric_2018.jpg",
+        image: "https://ichef.bbci.co.uk/ace/standard/3840/cpsprodpb/0c25/live/6f1543a0-3719-11f0-96c3-cf669419a2b0.jpg",
         position: "Midfielder",
         bio: "The Croatian playmaker, a 2018 Ballon d’Or winner, known for his immaculate passing, vision, and tireless energy in the center of the pitch.",
         achievements: ["Ballon d’Or Winner (2018)", "5x UEFA Champions League Winner", "Captain of Croatia's Golden Generation"],
@@ -145,7 +145,7 @@ const footballers = [
       },
       {
         name: "Mohamed Salah",
-        image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mohamed_Salah_2018.jpg",
+        image: "https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/11494969/GettyImages_944396220.jpg?quality=90&strip=all&crop=0%2C4.2124542124542%2C100%2C91.575091575092&w=2400",
         position: "Forward",
         bio: "The 'Egyptian King' of Liverpool, known for his blistering pace, prolific goal-scoring, and exceptional dribbling from the right wing.",
         achievements: ["3x Premier League Golden Boot", "UEFA Champions League Winner", "Premier League Champion"],
@@ -469,4 +469,5 @@ const footballers = [
     }
 
     document.documentElement.setAttribute("data-theme", "dark");
+
 
